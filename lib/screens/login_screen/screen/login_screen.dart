@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_clinic/constants/color_constants.dart';
+import 'package:medical_clinic/constants/image_constants.dart';
 import 'package:medical_clinic/utils/common_gradient.dart';
 import 'package:medical_clinic/widgets/common_button.dart';
 
@@ -14,9 +15,7 @@ class LoginScreen extends StatelessWidget {
         leading: Icon(Icons.arrow_back_ios, color: Colors.white),
         title: Text("Log In", style: Theme.of(context).textTheme.titleLarge),
         flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: commonGradient()
-          ),
+          decoration: BoxDecoration(gradient: commonGradient()),
         ),
       ),
       body: SingleChildScrollView(
@@ -53,14 +52,18 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   TextFormField(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(color: topGradientColor),
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
                         borderSide: BorderSide(color: Colors.transparent),
                       ),
                       border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
                         borderSide: BorderSide(color: Colors.transparent),
                       ),
                       focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
                         borderSide: BorderSide(color: Colors.transparent),
                       ),
                       filled: true,
@@ -77,15 +80,21 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   TextFormField(
+                    obscureText: true,
+                    obscuringCharacter: '*',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(color: topGradientColor),
                     decoration: InputDecoration(
                       suffixIcon: Icon(Icons.visibility_outlined),
                       border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
                         borderSide: BorderSide(color: Colors.transparent),
                       ),
                       focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
                         borderSide: BorderSide(color: Colors.transparent),
                       ),
                       enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12.0),
                         borderSide: BorderSide(color: Colors.transparent),
                       ),
                       filled: true,
@@ -98,20 +107,77 @@ class LoginScreen extends StatelessWidget {
                       alignment: Alignment.centerRight,
                       child: Text(
                         'Forgot Password',
-                        style: Theme.of(
-                          context,
-                        ).textTheme.bodyLarge?.copyWith(color: bottomGradientColor),
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: bottomGradientColor,
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: MediaQuery.of(context).size.height/12),
+              SizedBox(height: MediaQuery.of(context).size.height / 12),
               Center(
                 child: CommonButton(
-                  text: 'Login',
+                  text: 'Log In',
                   isGradientOne: true,
                   onPressed: () {},
+                ),
+              ),
+              SizedBox(height: MediaQuery.of(context).size.height / 12),
+              Center(
+                child: Column(
+                  children: [
+                    Text(
+                      'or sign up with',
+                      style: Theme.of(
+                        context,
+                      ).textTheme.labelSmall?.copyWith(color: Colors.black),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 48.0,
+                            height: 48.0,
+                            decoration: BoxDecoration(
+                              gradient: commonGradient(),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(ImageConstants.googleImg),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Container(
+                              width: 48.0,
+                              height: 48.0,
+                              decoration: BoxDecoration(
+                                gradient: commonGradient(),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Image.asset(ImageConstants.fbImg),
+                            ),
+                          ),
+                          Container(
+                            width: 48.0,
+                            height: 48.0,
+                            decoration: BoxDecoration(
+                              gradient: commonGradient(),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(ImageConstants.fingerPrintImg),
+                          ),
+                        ],
+                      ),
+                    ),
+                    RichText(text: TextSpan(
+                      children: [
+                        TextSpan(text: 'Don\'t have an account?',style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.black)),
+                        TextSpan(text: ' Sign Up',style: Theme.of(context).textTheme.labelSmall?.copyWith(color: bottomGradientColor))
+                      ]
+                    ),)
+                  ],
                 ),
               ),
             ],
