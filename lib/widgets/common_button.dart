@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_clinic/constants/color_constants.dart';
 import 'package:medical_clinic/utils/common_gradient.dart';
-import 'package:medical_clinic/utils/generic_theme.dart';
+import 'package:medical_clinic/utils/theme/generic_theme.dart';
 
 class CommonButton extends StatelessWidget {
   final String? text;

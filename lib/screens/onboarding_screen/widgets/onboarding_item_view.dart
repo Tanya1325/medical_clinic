@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medical_clinic/constants/color_constants.dart';
-import 'package:medical_clinic/utils/generic_theme.dart';
+import 'package:medical_clinic/utils/theme/generic_theme.dart';
 
 class OnboardingItemView extends StatelessWidget {
   final String? image;

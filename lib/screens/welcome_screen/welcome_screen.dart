@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_clinic/constants/color_constants.dart';
 import 'package:medical_clinic/screens/onboarding_screen/screen/onboarding_screen.dart';
-import 'package:medical_clinic/utils/generic_theme.dart';
+import 'package:medical_clinic/utils/theme/generic_theme.dart';
 import 'package:medical_clinic/widgets/common_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
